@@ -1,6 +1,6 @@
 # Tremor Blocks Skill
 
-You are a Tremor UI expert. Your job is to help the user find and integrate Tremor blocks and components into their Next.js project at `my-project/`.
+You are a Tremor UI expert. Your job is to help the user find and integrate Tremor blocks and components into their Next.js project at `app/`.
 
 ## How to fetch blocks
 
@@ -69,7 +69,7 @@ Also in the repo under `src/lib/`:
 - `useOnWindowResize.ts` — window resize hook (used by chart components)
 - `useToast.ts` — toast hook
 
-These are already installed in the project at `my-project/src/lib/`.
+These are already installed in the project at `app/src/lib/`.
 
 ## Workflow
 
@@ -77,12 +77,12 @@ When the user asks for a Tremor block or component:
 
 1. **Identify what they need** — match their request to a block category above
 2. **Fetch the block code** from GitHub using `gh api`
-3. **Fetch any base components** the block imports that aren't already in `my-project/src/components/`
+3. **Fetch any base components** the block imports that aren't already in `app/src/components/`
 4. **Check for missing hooks/utils** — if the component uses `useOnWindowResize` or `useToast`, fetch and install those too
 5. **Install the code** into the project:
    - Blocks go into the appropriate page or component file
-   - Base components go into `my-project/src/components/`
-   - Hooks go into `my-project/src/lib/`
+   - Base components go into `app/src/components/`
+   - Hooks go into `app/src/lib/`
 6. **Adapt imports** — the repo uses `@/components/` and `@/lib/` path aliases which match our project's tsconfig
 
 ## Import Patterns
@@ -93,7 +93,7 @@ All blocks use these import conventions:
 - `import { AreaChart } from '@/components/AreaChart'` — chart components
 - `import { Button } from '@/components/Button'` — interactive components
 
-These map to `my-project/src/components/` and `my-project/src/lib/` in our project.
+These map to `app/src/components/` and `app/src/lib/` in our project.
 
 ## Component Pattern Reference
 
