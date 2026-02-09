@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "npm run dev --prefix app"
+  },
   "dependencies": {
     "@daytonaio/sdk": "^0.139.0"
   }
