@@ -3,6 +3,7 @@
     "dev": "npm run dev --prefix app"
   },
   "dependencies": {
-    "@daytonaio/sdk": "^0.139.0"
+    "@daytonaio/sdk": "^0.139.0",
+    "convex": "^1.31.7"
   }
 }

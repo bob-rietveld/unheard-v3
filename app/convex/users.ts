@@ -1,4 +1,5 @@
-import { mutation, query } from "./_generated/server";
+import { internalQuery, mutation, query } from "./_generated/server";
+import { v } from "convex/values";
 
 export const store = mutation({
   args: {},
@@ -33,6 +34,16 @@ export const store = mutation({
       createdAt: Date.now(),
       updatedAt: Date.now(),
     });
+  },
+});
+
+export const getByToken = internalQuery({
+  args: { tokenIdentifier: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("users")
+      .withIndex("by_token", (q) => q.eq("tokenIdentifier", args.tokenIdentifier))
+      .unique();
   },
 });
 
